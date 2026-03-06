@@ -48,11 +48,11 @@ export default function NanoSkillsPage() {
 
                 <div style={{ padding: '24px 20px' }}>
                     <h2 style={{ fontSize: '28px', lineHeight: '1.2', fontWeight: '800', marginBottom: '16px' }}>
-                        Nano Skills, <span style={{ color: '#EE2C3C' }}>Big Impact</span>, Less Time
+                        Level up in <span style={{ color: '#EE2C3C' }}>30 minutes</span> or less
                     </h2>
 
                     <p style={{ color: '#666', fontSize: '14px', lineHeight: '1.6', marginBottom: '12px' }}>
-                        Master high-impact skills in under 25 minutes. Our hand-picked Nano Videos are designed for busy professionals to stay ahead of the curve, one bite-size lesson at a time.
+                        Master high-impact skills in 30 minutes or less. Our hand-picked Nano Videos are designed for busy professionals to stay ahead of the curve, one bite-size lesson at a time.
                         <span style={{ color: '#1A1A1A', fontWeight: '600', marginLeft: '4px', borderBottom: '1px solid #1A1A1A' }}>Read More</span>
                     </p>
 
@@ -78,7 +78,7 @@ export default function NanoSkillsPage() {
             {/* Course List Section Title */}
             <section style={{ padding: '24px 20px' }}>
                 <h3 style={{ fontSize: '20px', fontWeight: '800', marginBottom: '4px' }}>
-                    Discover more <span style={{ color: '#EE2C3C' }}>short-size videos</span> or courses
+                    Discover more <span style={{ color: '#EE2C3C' }}>30-minute videos</span> or courses
                 </h3>
                 <p style={{ fontSize: '13px', color: '#666', marginBottom: '20px' }}>Popular Programs (13)</p>
 

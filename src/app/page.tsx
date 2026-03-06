@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export default function Home() {
   const goals = [
-    "Learn in 25 minutes",
+    "Learn in 30 minutes",
     "Get a promotion",
     "Industry Certification",
     "Data Science Courses",
@@ -159,7 +159,7 @@ export default function Home() {
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
             {goals.map((goal) => (
-              goal === "Learn in 25 minutes" ? (
+              goal === "Learn in 30 minutes" ? (
                 <Link href="/nano-skills" key={goal} style={{ textDecoration: 'none' }}>
                   <motion.button
                     animate={{
