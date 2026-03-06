@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "UpGrad Prototype",
-  description: "Initial Scaffold",
+  title: "UpGrad Nano Skills Prototype",
+  description: "A working prototype for UpGrad Nano Skills feature",
 };
 
 export default function RootLayout({
@@ -13,7 +13,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <div className="iphone-frame">
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
