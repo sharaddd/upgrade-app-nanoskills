@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-red: #EE2C3C;
+  --bg-white: #FFFFFF;
+  --text-black: #1A1A1A;
+  --text-gray: #666666;
+  --border-light: #E0E0E0;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --font-inter: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-inter);
+  background-color: #F8F9FA;
+  color: var(--text-black);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.iphone-frame {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--bg-white);
+  box-shadow: 0 0 50px rgba(0,0,0,0.1);
+  position: relative;
+  overflow-x: hidden;
+  padding-bottom: 80px; /* Space for bottom nav */
+}
+
+/* Custom Utilities */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
