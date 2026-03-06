@@ -1,10 +1,12 @@
 "use client";
 
 import React from 'react';
-import { Search, Compass, BookOpen, Calendar } from 'lucide-react';
+import { Search, Compass, BookOpen, Calendar, Zap } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Home() {
   const goals = [
+    "Learn in 25 minutes",
     "Get a promotion",
     "Industry Certification",
     "Data Science Courses",
@@ -156,18 +158,46 @@ export default function Home() {
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
             {goals.map((goal) => (
-              <button key={goal} style={{
-                padding: '8px 16px',
-                borderRadius: '8px',
-                border: '1px solid #E0E0E0',
-                fontSize: '13px',
-                whiteSpace: 'nowrap',
-                backgroundColor: 'white',
-                color: '#1A1A1A',
-                fontWeight: '500'
-              }}>
+              <motion.button
+                key={goal}
+                animate={goal === "Learn in 25 minutes" ? {
+                  boxShadow: [
+                    "0 0 0px rgba(238, 44, 60, 0)",
+                    "0 4px 12px rgba(238, 44, 60, 0.2)",
+                    "0 0 0px rgba(238, 44, 60, 0)"
+                  ]
+                } : {}}
+                transition={goal === "Learn in 25 minutes" ? {
+                  repeat: Infinity,
+                  duration: 2,
+                  ease: "easeInOut"
+                } : {}}
+                style={{
+                  padding: '8px 16px',
+                  borderRadius: '8px',
+                  border: goal === "Learn in 25 minutes" ? '1px solid #FFCDD2' : '1px solid #E0E0E0',
+                  fontSize: '13px',
+                  whiteSpace: 'nowrap',
+                  backgroundColor: 'white',
+                  color: '#1A1A1A',
+                  fontWeight: goal === "Learn in 25 minutes" ? '600' : '500',
+                  position: 'relative'
+                }}
+              >
                 {goal}
-              </button>
+                {goal === "Learn in 25 minutes" && (
+                  <div style={{
+                    position: 'absolute',
+                    top: '-4px',
+                    right: '-4px',
+                    width: '8px',
+                    height: '8px',
+                    backgroundColor: '#EE2C3C',
+                    borderRadius: '50%',
+                    border: '2px solid white'
+                  }} />
+                )}
+              </motion.button>
             ))}
           </div>
         </div>
@@ -192,16 +222,37 @@ export default function Home() {
         padding: '12px 10px 24px 10px',
         zIndex: 100
       }}>
+        {/* EXPLORE (ACTIVE) */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', color: '#000', minWidth: '70px' }}>
           <Compass size={24} strokeWidth={2.5} />
           <span style={{ fontSize: '11px', fontWeight: '700' }}>Explore</span>
         </div>
 
+        {/* NANO SKILLS (MATCHING OTHER OPTIONS) */}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', color: '#666', minWidth: '70px' }}>
+          <div style={{ position: 'relative' }}>
+            <Zap size={24} strokeWidth={2} />
+            {/* Subtle indicator for new feature - very small dot */}
+            <div style={{
+              position: 'absolute',
+              top: -1,
+              right: -1,
+              width: '5px',
+              height: '5px',
+              borderRadius: '50%',
+              backgroundColor: '#EE2C3C'
+            }} />
+          </div>
+          <span style={{ fontSize: '11px', fontWeight: '500' }}>Nano Skills</span>
+        </div>
+
+        {/* MY PROGRAMS */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', color: '#666', minWidth: '70px' }}>
           <BookOpen size={24} strokeWidth={2} />
           <span style={{ fontSize: '11px', fontWeight: '500' }}>My Programs</span>
         </div>
 
+        {/* PLANNER */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', color: '#666', minWidth: '70px' }}>
           <Calendar size={24} strokeWidth={2} />
           <span style={{ fontSize: '11px', fontWeight: '500' }}>Planner</span>
