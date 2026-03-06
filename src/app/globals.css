@@ -6,8 +6,8 @@
   --text-black: #1A1A1A;
   --text-gray: #666666;
   --border-light: #E0E0E0;
-  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
   --font-inter: 'Inter', sans-serif;
 }
 
@@ -41,10 +41,11 @@ button {
   margin: 0 auto;
   min-height: 100vh;
   background: var(--bg-white);
-  box-shadow: 0 0 50px rgba(0,0,0,0.1);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow-x: hidden;
-  padding-bottom: 80px; /* Space for bottom nav */
+  padding-bottom: 80px;
+  /* Space for bottom nav */
 }
 
 /* Custom Utilities */
