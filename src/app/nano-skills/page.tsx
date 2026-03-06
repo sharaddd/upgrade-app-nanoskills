@@ -48,7 +48,7 @@ export default function NanoSkillsPage() {
 
                 <div style={{ padding: '24px 20px' }}>
                     <h2 style={{ fontSize: '28px', lineHeight: '1.2', fontWeight: '800', marginBottom: '16px' }}>
-                        Bite-sized <span style={{ color: '#EE2C3C' }}>Nano Videos</span> for rapid learning
+                        Nano Skills, <span style={{ color: '#EE2C3C' }}>Big Impact</span>, Less Time
                     </h2>
 
                     <p style={{ color: '#666', fontSize: '14px', lineHeight: '1.6', marginBottom: '12px' }}>
