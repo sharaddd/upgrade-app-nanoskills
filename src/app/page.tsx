@@ -3,6 +3,7 @@
 import React from 'react';
 import { Search, Compass, BookOpen, Calendar, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function Home() {
   const goals = [
@@ -158,46 +159,63 @@ export default function Home() {
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
             {goals.map((goal) => (
-              <motion.button
-                key={goal}
-                animate={goal === "Learn in 25 minutes" ? {
-                  boxShadow: [
-                    "0 0 0px rgba(238, 44, 60, 0)",
-                    "0 4px 12px rgba(238, 44, 60, 0.2)",
-                    "0 0 0px rgba(238, 44, 60, 0)"
-                  ]
-                } : {}}
-                transition={goal === "Learn in 25 minutes" ? {
-                  repeat: Infinity,
-                  duration: 2,
-                  ease: "easeInOut"
-                } : {}}
-                style={{
-                  padding: '8px 16px',
-                  borderRadius: '8px',
-                  border: goal === "Learn in 25 minutes" ? '1px solid #FFCDD2' : '1px solid #E0E0E0',
-                  fontSize: '13px',
-                  whiteSpace: 'nowrap',
-                  backgroundColor: 'white',
-                  color: '#1A1A1A',
-                  fontWeight: goal === "Learn in 25 minutes" ? '600' : '500',
-                  position: 'relative'
-                }}
-              >
-                {goal}
-                {goal === "Learn in 25 minutes" && (
-                  <div style={{
-                    position: 'absolute',
-                    top: '-4px',
-                    right: '-4px',
-                    width: '8px',
-                    height: '8px',
-                    backgroundColor: '#EE2C3C',
-                    borderRadius: '50%',
-                    border: '2px solid white'
-                  }} />
-                )}
-              </motion.button>
+              goal === "Learn in 25 minutes" ? (
+                <Link href="/nano-skills" key={goal} style={{ textDecoration: 'none' }}>
+                  <motion.button
+                    animate={{
+                      boxShadow: [
+                        "0 0 0px rgba(238, 44, 60, 0)",
+                        "0 4px 12px rgba(238, 44, 60, 0.2)",
+                        "0 0 0px rgba(238, 44, 60, 0)"
+                      ]
+                    }}
+                    transition={{
+                      repeat: Infinity,
+                      duration: 2,
+                      ease: "easeInOut"
+                    }}
+                    style={{
+                      padding: '8px 16px',
+                      borderRadius: '8px',
+                      border: '1px solid #FFCDD2',
+                      fontSize: '13px',
+                      whiteSpace: 'nowrap',
+                      backgroundColor: 'white',
+                      color: '#1A1A1A',
+                      fontWeight: '600',
+                      position: 'relative'
+                    }}
+                  >
+                    {goal}
+                    <div style={{
+                      position: 'absolute',
+                      top: '-4px',
+                      right: '-4px',
+                      width: '8px',
+                      height: '8px',
+                      backgroundColor: '#EE2C3C',
+                      borderRadius: '50%',
+                      border: '2px solid white'
+                    }} />
+                  </motion.button>
+                </Link>
+              ) : (
+                <button
+                  key={goal}
+                  style={{
+                    padding: '8px 16px',
+                    borderRadius: '8px',
+                    border: '1px solid #E0E0E0',
+                    fontSize: '13px',
+                    whiteSpace: 'nowrap',
+                    backgroundColor: 'white',
+                    color: '#1A1A1A',
+                    fontWeight: '500'
+                  }}
+                >
+                  {goal}
+                </button>
+              )
             ))}
           </div>
         </div>
@@ -228,23 +246,24 @@ export default function Home() {
           <span style={{ fontSize: '11px', fontWeight: '700' }}>Explore</span>
         </div>
 
-        {/* NANO SKILLS (MATCHING OTHER OPTIONS) */}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', color: '#666', minWidth: '70px' }}>
-          <div style={{ position: 'relative' }}>
-            <Zap size={24} strokeWidth={2} />
-            {/* Subtle indicator for new feature - very small dot */}
-            <div style={{
-              position: 'absolute',
-              top: -1,
-              right: -1,
-              width: '5px',
-              height: '5px',
-              borderRadius: '50%',
-              backgroundColor: '#EE2C3C'
-            }} />
+        {/* NANO SKILLS */}
+        <Link href="/nano-skills" style={{ textDecoration: 'none' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', color: '#666', minWidth: '70px' }}>
+            <div style={{ position: 'relative' }}>
+              <Zap size={24} strokeWidth={2} />
+              <div style={{
+                position: 'absolute',
+                top: -1,
+                right: -1,
+                width: '5px',
+                height: '5px',
+                borderRadius: '50%',
+                backgroundColor: '#EE2C3C'
+              }} />
+            </div>
+            <span style={{ fontSize: '11px', fontWeight: '500' }}>Nano Skills</span>
           </div>
-          <span style={{ fontSize: '11px', fontWeight: '500' }}>Nano Skills</span>
-        </div>
+        </Link>
 
         {/* MY PROGRAMS */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', color: '#666', minWidth: '70px' }}>
